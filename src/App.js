@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import Jumbotron from './components/Jumbotron';
+import Grid from './components/Grid';
 
 class App extends Component {
   render() {
@@ -8,6 +9,7 @@ class App extends Component {
       <div>
         <Navbar />
         <Jumbotron />
+        <Grid />
       </div>
     );
   }
