@@ -1,0 +1,13 @@
+footer {
+    background-color: #020202;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+footer a {
+    color: #24ade4;
+}
+
+footer a:hover {
+    color: #ff396e;
+}
