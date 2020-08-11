@@ -6,7 +6,7 @@ class Card extends Component {
   render(props) {
     return (
       <div className="card-holder">
-        <img className="img-fluid" src={`/img/${this.props.image.src}`} alt={this.props.image.name}/>
+        <img className="img-fluid" src={`${process.env.PUBLIC_URL}/img/${this.props.image.src}`} alt={this.props.image.name}/>
         <div className="img-credit">{this.props.image.credit}</div>
       </div>
     );
