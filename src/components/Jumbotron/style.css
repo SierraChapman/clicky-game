@@ -1,5 +1,5 @@
 #jumbotron {
-    background-image: url("/img/hubble-deep-field.jpg");
+    /* background-image: url(env(PUBLIC_URL) "/img/hubble-deep-field.jpg"); */
     background-color: #020202;
     background-position: center;
     background-size: cover;
