@@ -1,5 +1,6 @@
 header {
     box-shadow: 0px 0px 10px #ffffff;
+    background: #000000;
 }
 
 h1 {
@@ -17,3 +18,35 @@ h1 {
     text-shadow: 0px 0px 5px #ff396e;
 }
 
+p {
+    display: inline-block;
+}
+
+/* for aligning the text along the top */
+@media (min-width: 768px) {
+    #small-title-text {
+        margin: 1.75rem -1rem 0 -1rem;
+    }
+
+    #hst {
+        font-size: 2.5rem;
+        margin-top: 0.35rem;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    #score-div {
+        text-align: right;
+    }
+
+    #small-title-text {
+        font-size: 17px;
+        margin: 1.67rem -1rem 0 -1rem;
+    }
+
+    #score-div {
+        font-size: 17px;
+        margin-top: 1.3rem;
+    }
+}
