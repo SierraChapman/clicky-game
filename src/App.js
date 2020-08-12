@@ -24,7 +24,21 @@ class App extends Component {
 
   handleClick = imageSrc => {
     console.log(imageSrc + " was clicked!");
-    this.shuffleImages();
+    console.log(this.state.wasClicked[imageSrc]);
+    // this.shuffleImages();
+    this.handleGoodClick(imageSrc);
+  }
+
+  handleGoodClick = imageSrc => {
+    // shuffle, increase score, possibly increase high score and mark as clicked
+    this.setState(state => {
+      return {
+        images: shuffle(state.images),
+        score: state.score + 1,
+        topScore: (state.score + 1 > state.topScore) ? state.score + 1 : state.topScore,
+        wasClicked: {...state.wasClicked, [imageSrc]: true}
+      };
+    });
   }
 
   render() {
