@@ -5,11 +5,15 @@ import Grid from './components/Grid';
 import Footer from './components/Footer';
 import shuffle from './utils/shuffle';
 
+const imageData = require('./images.json');
+
 class App extends Component {
   state = {
-    images: shuffle(require('./images.json')),
+    images: shuffle(imageData),
     score: 0,
     topScore: 0,
+    // wasClicked is an object with keys of image names and values starting out as false
+    wasClicked: imageData.reduce((obj, image) => ({ ...obj, [image.src]: false}), {})
   }
 
   shuffleImages = () => {
