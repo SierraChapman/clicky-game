@@ -22,12 +22,17 @@ class App extends Component {
     });
   }
 
+  handleClick = imageSrc => {
+    console.log(imageSrc + " was clicked!");
+    this.shuffleImages();
+  }
+
   render() {
     return (
       <div>
         <Navbar />
         <Jumbotron />
-        <Grid images={this.state.images} shuffleImages={this.shuffleImages} />
+        <Grid images={this.state.images} handleClick={this.handleClick} />
         <Footer />
       </div>
     );

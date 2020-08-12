@@ -5,7 +5,7 @@ class Card extends Component {
 
   render() {
     return (
-      <div className="card-holder" onClick={this.props.shuffleImages}>
+      <div className="card-holder" onClick={() => this.props.handleClick(this.props.image.src)}>
         <img className="img-fluid" src={`${process.env.PUBLIC_URL}/img/${this.props.image.src}`} alt={this.props.image.name}/>
         <div className="img-credit">{this.props.image.credit}</div>
       </div>
