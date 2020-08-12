@@ -6,14 +6,16 @@ import Footer from './components/Footer';
 import shuffle from './utils/shuffle';
 
 const imageData = require('./images.json');
+// save initial state for wasClicked to make it easy to reset it
+// wasClicked is an object with keys of image names and values starting out as false
+const wasClickedStarter = imageData.reduce((obj, image) => ({ ...obj, [image.src]: false}), {});
 
 class App extends Component {
   state = {
     images: shuffle(imageData),
     score: 0,
     topScore: 0,
-    // wasClicked is an object with keys of image names and values starting out as false
-    wasClicked: imageData.reduce((obj, image) => ({ ...obj, [image.src]: false}), {})
+    wasClicked: wasClickedStarter
   }
 
   shuffleImages = () => {
@@ -25,7 +27,7 @@ class App extends Component {
   handleClick = imageSrc => {
     // if the image was previously clicked, it's a bad click!
     if (this.state.wasClicked[imageSrc]) {
-      console.log("Bad click!");
+      this.handleBadClick();
     } else {
       this.handleGoodClick(imageSrc);
     }
@@ -41,6 +43,18 @@ class App extends Component {
         wasClicked: {...state.wasClicked, [imageSrc]: true}
       };
     });
+  }
+
+  handleBadClick = () => {
+    // shuffle, reset score, and reset wasClicked
+    this.setState(state => {
+      return {
+        images: shuffle(state.images),
+        score: 0,
+        topScore: state.topScore,
+        wasClicked: wasClickedStarter
+      }
+    })
   }
 
   render() {
