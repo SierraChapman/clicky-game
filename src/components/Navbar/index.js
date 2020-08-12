@@ -9,7 +9,7 @@ class Navbar extends Component {
           <div className="col-12 col-md-auto"><h1 className="mt-2">Clicky Game</h1></div>
           <div className="col-12 col-md-auto"><p id="small-title-text" className="mb-1">with images from</p></div>
           <div className="col-12 col-md-auto"><p id="hst"><strong>HUBBLE</strong> SPACE TELESCOPE</p></div>
-          <div id="score-div" className="col-12 col-lg"><p>Score: 0 | Top Score: 12</p></div>
+          <div id="score-div" className="col-12 col-lg"><p>Score: {this.props.score} | Top Score: {this.props.topScore}</p></div>
         </div>
       </header>
     );

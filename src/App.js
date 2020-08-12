@@ -44,7 +44,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar score={this.state.score} topScore={this.state.topScore} />
         <Jumbotron />
         <Grid images={this.state.images} handleClick={this.handleClick} />
         <Footer />
