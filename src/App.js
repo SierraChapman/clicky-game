@@ -3,12 +3,18 @@ import Navbar from './components/Navbar';
 import Jumbotron from './components/Jumbotron';
 import Grid from './components/Grid';
 import Footer from './components/Footer';
+import shuffle from './utils/shuffle';
 
 class App extends Component {
   state = {
-    images: require('./images.json'),
+    images: shuffle(require('./images.json')),
     score: 0,
     topScore: 0,
+  }
+
+  shuffleImages() {
+    const images = shuffle(this.state.images);
+    this.setState({...this.state, images});
   }
 
   render() {
