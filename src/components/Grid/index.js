@@ -11,7 +11,7 @@ class Grid extends Component {
           {this.props.images.map(image => {
             return (
               <div className="col-6 col-sm-4 col-md-3" style={{marginTop: 15, marginBottom: 15}} key={image.src} >
-                <Card image={image} handleClick={this.props.handleClick} />
+                <Card image={image} previouslyClicked={this.props.wasClicked[image.src]} handleClick={this.props.handleClick} />
               </div>
             );
           })}

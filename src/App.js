@@ -62,7 +62,7 @@ class App extends Component {
       <div>
         <Navbar score={this.state.score} topScore={this.state.topScore} />
         <Jumbotron />
-        <Grid images={this.state.images} handleClick={this.handleClick} />
+        <Grid images={this.state.images} wasClicked={this.state.wasClicked} handleClick={this.handleClick} />
         <Footer />
       </div>
     );
