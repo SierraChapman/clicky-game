@@ -12,9 +12,10 @@ class App extends Component {
     topScore: 0,
   }
 
-  shuffleImages() {
-    const images = shuffle(this.state.images);
-    this.setState({...this.state, images});
+  shuffleImages = () => {
+    this.setState(state => {
+      return {...state, images: shuffle(state.images)};
+    });
   }
 
   render() {
@@ -22,7 +23,7 @@ class App extends Component {
       <div>
         <Navbar />
         <Jumbotron />
-        <Grid images={this.state.images} />
+        <Grid images={this.state.images} shuffleImages={this.shuffleImages} />
         <Footer />
       </div>
     );
