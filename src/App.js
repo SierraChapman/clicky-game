@@ -25,15 +25,15 @@ class App extends Component {
   }
 
   handleClick = imageSrc => {
-    // if the image was previously clicked, it's a bad click!
+    // if the image was previously clicked, the user lost!
     if (this.state.wasClicked[imageSrc]) {
-      this.handleBadClick();
+      this.restartGame();
     } else {
-      this.handleGoodClick(imageSrc);
+      this.increaseScore(imageSrc);
     }
   }
 
-  handleGoodClick = imageSrc => {
+  increaseScore = imageSrc => {
     // shuffle, increase score, possibly increase high score and mark as clicked
     this.setState(state => {
       return {
@@ -45,7 +45,7 @@ class App extends Component {
     });
   }
 
-  handleBadClick = () => {
+  restartGame = () => {
     // shuffle, reset score, and reset wasClicked
     this.setState(state => {
       return {
