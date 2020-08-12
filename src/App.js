@@ -23,10 +23,12 @@ class App extends Component {
   }
 
   handleClick = imageSrc => {
-    console.log(imageSrc + " was clicked!");
-    console.log(this.state.wasClicked[imageSrc]);
-    // this.shuffleImages();
-    this.handleGoodClick(imageSrc);
+    // if the image was previously clicked, it's a bad click!
+    if (this.state.wasClicked[imageSrc]) {
+      console.log("Bad click!");
+    } else {
+      this.handleGoodClick(imageSrc);
+    }
   }
 
   handleGoodClick = imageSrc => {
