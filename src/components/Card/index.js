@@ -3,7 +3,7 @@ import './style.css';
 
 class Card extends Component {
 
-  render(props) {
+  render() {
     return (
       <div className="card-holder">
         <img className="img-fluid" src={`${process.env.PUBLIC_URL}/img/${this.props.image.src}`} alt={this.props.image.name}/>
